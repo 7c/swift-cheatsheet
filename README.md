@@ -46,8 +46,19 @@ let headers: HTTPHeaders = [
     "Accept": "application/json"
 ]
 
+
 AF.request("https://ip8.com/echo",method:.post,headers:headers).response { response in
-    debugPrint(response)
+    // Accessing body and statuscode from response
+    if let statuscode = response.response?.statusCode {
+        print("Statuscode: \(statuscode)")
+        if statuscode==200 {
+            if let data = response.data  {
+                print("Body:")
+                print(String(decoding:data, as: UTF8.self))
+            }
+        }
+        
+    }
 }
 
 ```
