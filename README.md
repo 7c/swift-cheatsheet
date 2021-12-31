@@ -2,6 +2,7 @@
 
 ## XHR Requests
 ### Alamofire
+[Docs](https://alamofire.github.io/Alamofire/)
 ```swift
 import Alamofire
 //
@@ -38,4 +39,15 @@ AF.request("https://ip8.com/echo",
 AF.request("https://ip8.com/echo",method:.post,parameters: ["foo":["bar"],"baz":["a","b"]]).response { response in
     debugPrint("post url encoded parameters",response)
 }
+
+// POST with headers
+let headers: HTTPHeaders = [
+    "Authorization": "Basic VXNlcm5hbWU6UGFzc3dvcmQ=",
+    "Accept": "application/json"
+]
+
+AF.request("https://ip8.com/echo",method:.post,headers:headers).response { response in
+    debugPrint(response)
+}
+
 ```
