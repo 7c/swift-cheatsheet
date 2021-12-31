@@ -2,7 +2,7 @@
 
 ## XHR Requests
 ### Alamofire
-[Docs](https://alamofire.github.io/Alamofire/)
+Alamofire is an HTTP networking library written in Swift. [Features](https://github.com/Alamofire/Alamofire#features), [Docs](https://alamofire.github.io/Alamofire/)
 ```swift
 import Alamofire
 //
