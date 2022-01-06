@@ -48,6 +48,38 @@ case .number(_): // Ignore the Int value
 }
 ```
 
+## JSON 
+### [DynamicJSON](https://github.com/illescasDaniel/DynamicJson)
+### Decoding to Struct
+```swift
+// needs to be Codable
+struct Account: Codable {
+    let email : String
+    let expiration : Int64
+    let hpassword : String
+    let id : Int
+    let is_test: Int
+    let lastseen : Int64
+    let product_id : String
+    let register_ip : String
+    let uid : String
+    let verified : Int
+    let createdAt : String
+}
+
+if let strdata = (ret[0] as! String).data(using: .utf8) {
+    do {
+        let json = try JSONDecoder().decode(Account.self,from:strdata)
+        print(json)
+    }catch let error {
+        print(error)
+        return
+    }
+}
+
+```
+
+
 ## Extension
 ```swift
 extension Date {
